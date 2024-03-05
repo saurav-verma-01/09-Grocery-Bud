@@ -18,6 +18,7 @@ const Item = ({ item, onRemove, onEdit }) => {
         id="completed"
         onChange={handleEdit}
         value={isChecked}
+        checked={isChecked}
       />
       <p
         className="item-name"

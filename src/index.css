@@ -102,6 +102,7 @@ body {
   margin-left: 1rem;
   margin-right: auto;
   color: #050912;
+  text-transform: capitalize;
 }
 
 .delete-btn {
