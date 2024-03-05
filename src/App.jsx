@@ -20,12 +20,19 @@ const App = () => {
     setList(newItems);
   };
 
-  console.log(list);
+  const editItem = (itemId) => {
+    const newItems = list.map((item) =>
+      item.id === itemId ? { ...item, completed: !item.completed } : item
+    );
+    setList(newItems);
+  };
+
+  // console.log(list);
   return (
     <main className="app">
       <h2 className="app-title">Input Form</h2>
       <GroceryForm onAdd={addItem} />
-      <Lists list={list} onRemove={removeItem} />
+      <Lists list={list} onRemove={removeItem} onEdit={editItem} />
     </main>
   );
 };
