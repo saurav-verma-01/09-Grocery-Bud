@@ -15,12 +15,17 @@ const App = () => {
     setList([...list, newItem]);
   };
 
+  const removeItem = (itemId) => {
+    const newItems = list.filter((item) => item.id !== itemId);
+    setList(newItems);
+  };
+
   console.log(list);
   return (
     <main className="app">
       <h2 className="app-title">Input Form</h2>
       <GroceryForm onAdd={addItem} />
-      <Lists list={list} />
+      <Lists list={list} onRemove={removeItem} />
     </main>
   );
 };
